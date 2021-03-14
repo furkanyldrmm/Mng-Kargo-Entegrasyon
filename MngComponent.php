@@ -96,7 +96,6 @@ class MngComponent
         curl_setopt($soap_do, CURLOPT_HTTPHEADER, $header);
         $result = curl_exec($soap_do);
         $xml = preg_replace("/(<\/?)(\w+):([^>]*>)/", "$1$2$3", $result);
-        //$xml=$result;
         $xml = simplexml_load_string($xml);
         $json = json_encode($xml);
         $responseArray = json_decode($json, true);
