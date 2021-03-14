@@ -8,19 +8,15 @@ class MngComponent
     public $_debug = false;
 
     public function selectCargo()
-    {///GelecekIadeSiparisKontrol fonksyonudur kargo durumu sorgular
+    {
 
         $url = 'http://service.mngkargo.com.tr/tservis/musterisiparisnew.asmx';
 
-        /*
-        $resultx[0]='35615719';//451820558
-        $resultx[1]='356TST2425XGHPRFTG';//RYEJZQWV
-        $resultx[2]=';//http://service.mngkargo.com.tr/musterikargosiparis/musterisiparisnew.asmx
-        */
+      
         $data = [
-            "username" => "35615719",
-            "password" => "356TST2425XGHPRFTG",
-            "keyship" => "deneme76"
+            "username" => "username",
+            "password" => "password",
+            "keyship" => "12345"
         ];
         $selectCargo = new CargoSelect($data);
         $selectShipment = $selectCargo->CargoSelectXml();
@@ -31,11 +27,11 @@ class MngComponent
 
 
     public function cancelCargo()
-    {///GelecekIadeSiparisIptali fonksyonudur kargo iptal eder
+    {
         $data = [
-            "username" => "35615719",
-            "password" => "356TST2425XGHPRFTG",
-            "keyship" => "deneme76"
+            "username" => "username",
+            "password" => "password",
+            "keyship" => "12345"
         ];
 
         $url = 'http://service.mngkargo.com.tr/tservis/musterisiparisnew.asmx';
@@ -51,13 +47,13 @@ class MngComponent
     }
 
     public function createCargo()
-    {///SiparisKayit_C2C fonksyonudur kargo siparişi oluşturur
+    {
 
 
         $data = [
-            "username" => "35615719",
-            "password" => "356TST2425XGHPRFTG",
-            "keyship" => "deneme777",
+            "username" => "username",
+            "password" => "password",
+            "keyship" => "1234",
             "desi" => 1,
             "sender_name" => "deneme",
             "sender_city" => "deneme",
@@ -84,13 +80,6 @@ class MngComponent
     }
 
 
-    function checkCharakter($charim)
-    {
-        $bulunacak = array('ç', 'Ç', 'ı', 'İ', 'ğ', 'Ğ', 'ü', 'ö', 'Ş', 'ş', 'Ö', 'Ü', ',', ' ', '(', ')', '[', ']');
-        $degistir = array('c', 'C', 'i', 'I', 'g', 'G', 'u', 'o', 'S', 's', 'O', 'U', '', ' ', '', '', '', '');
-        $sonuc = str_replace($bulunacak, $degistir, $charim);
-        return $sonuc;
-    }
 
 
     function curlInit($url, $selectShipment, $header)
