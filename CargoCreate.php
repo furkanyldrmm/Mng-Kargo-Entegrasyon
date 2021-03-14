@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\MngKargo;
 class CargoCreate{
-    protected $OrderCargo;
     protected $username;
     protected $password;
     protected $keyship;
@@ -19,52 +18,28 @@ class CargoCreate{
     protected $buyer_mobile;
     protected $buyer_taxnumber;
     protected $payer;
-    /**
-     * $data = [
-     * "username" => "deneme";
-     * "password" => "deneme";
-     * "keyship" => "deneme";
-     * "desi" => 1;
-     * "sender_name" => "deneme";
-     * "sender_city" => "deneme";
-     * "sender_region" => "deneme";
-     * "sender_address" => "deneme";
-     * "sender_mobile" => "deneme";
-     * "sender_taxnumber" => "deneme";
-     * "buyer_name" => "deneme";
-     * "buyer_city" => "deneme";
-     * "buyer_region" => "deneme";
-     * "buyer_address" => "deneme";
-     * "buyer_mobile" => "deneme";
-     * "buyer_taxnumber" => "deneme";
-     * "payer" => "Platform_Odeyecek";
-     * ];
-     */
+  
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct($OrderCargo)
+    
+    public function __construct($Data)
     {
-        $this->username = $OrderCargo['username'];
-        $this->password = $OrderCargo['password'];
-        $this->keyship = $OrderCargo['keyship'];
-        $this->desi = $OrderCargo['desi'];
-        $this->sender_name = $OrderCargo['sender_name'];
-        $this->sender_city = $OrderCargo['sender_city'];
-        $this->sender_region = $OrderCargo['sender_region'];
-        $this->sender_address = $OrderCargo['sender_address'];
-        $this->sender_mobile = $OrderCargo['sender_mobile'];
-        $this->sender_taxnumber = $OrderCargo['sender_taxnumber'];
-        $this->buyer_name = $OrderCargo['buyer_name'];
-        $this->buyer_city = $OrderCargo['buyer_city'];
-        $this->buyer_region = $OrderCargo['buyer_region'];
-        $this->buyer_address = $OrderCargo['buyer_address'];
-        $this->buyer_mobile = $OrderCargo['buyer_mobile'];
-        $this->buyer_taxnumber = $OrderCargo['buyer_taxnumber'];
-        $this->payer = $OrderCargo['payer'];
+        $this->username = $Data['username'];
+        $this->password = $Data['password'];
+        $this->keyship = $Data['keyship'];
+        $this->desi = $Data['desi'];
+        $this->sender_name = $Data['sender_name'];
+        $this->sender_city = $Data['sender_city'];
+        $this->sender_region = $Data['sender_region'];
+        $this->sender_address = $Data['sender_address'];
+        $this->sender_mobile = $Data['sender_mobile'];
+        $this->sender_taxnumber = $Data['sender_taxnumber'];
+        $this->buyer_name = $Data['buyer_name'];
+        $this->buyer_city = $Data['buyer_city'];
+        $this->buyer_region = $Data['buyer_region'];
+        $this->buyer_address = $Data['buyer_address'];
+        $this->buyer_mobile = $Data['buyer_mobile'];
+        $this->buyer_taxnumber = $Data['buyer_taxnumber'];
+        $this->payer = $Data['payer'];
     }
 
     function SiparisKayitXML(){
